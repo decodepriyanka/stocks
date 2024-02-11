@@ -1,0 +1,98 @@
+:root {
+  --card-background-light: #eeeeee;
+  --card-box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --card-text-light: #120c0c;
+  --hover-transform-scale-light: 1.05;
+  --hover-box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-background-light);
+  box-shadow: var(--card-box-shadow-light);
+  color: var(--card-text-light);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.card:hover {
+  transform: scale(var(--hover-transform-scale-light));
+  box-shadow: var(--hover-box-shadow-light);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #79A7D3;
+  border-radius: 10px 10px 0 0;
+}
+
+.card p {
+  font-size: 16px;
+  color: var(--card-text-light);
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+[data-theme="dark"] {
+  --card-background-dark: #0B2447;
+  --card-box-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.1);
+  --card-text-dark: #A5D7E8;
+  --hover-transform-scale-dark: 1.05;
+  --hover-box-shadow-dark: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-background-dark);
+  box-shadow: var(--card-box-shadow-dark);
+  color: var(--card-text-dark);
+  transform: scale(var(--hover-transform-scale-dark));
+  transition: transform 0.2s;
+  border: none;
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--hover-box-shadow-dark);
+}
+
+
+.card p {
+  font-size: 16px;
+  color: var(--card-text-dark);
+  margin: 10px;
+  padding: 10px 20px;
+}
+
+.load-more {
+  display: block;
+  margin: 20px auto;
+  background-color: #79A7D3;
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.load-more:hover {
+  background-color: #6883BC;
+}
+
+[data-theme="dark"] .load-more {
+  background-color: #333;
+  color: #eee;
+  transition: background-color 0.3s;
+}

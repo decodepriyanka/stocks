@@ -1,0 +1,205 @@
+/* :root variables for light theme */
+:root {
+  --company-text-color-light: #333;
+  --company-background-color-light: #fff;
+  --accent-background-light: #6883BC;
+  --button-background-light: #6883BC;
+  --button-text-light: #fff;
+  --card-background-light: #f3f4f6;
+  --card-box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* :root variables for dark theme */
+:root {
+  --company-text-color-dark: #fff;
+  --company-background-color-dark: #576CBC;
+  --accent-background-dark: #0056b3;
+  --button-background-dark: #0056b3;
+  --button-text-dark: #fff;
+  --card-background-dark: #576CBC; 
+  --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1); 
+}
+
+/* Common styles for both themes */
+/* Container */
+.company-information-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Card */
+.company-information-content {
+  border-radius: 12px;
+  box-shadow: var(--card-box-shadow-light);
+  padding: 24px;
+  max-width: none;
+  width: 100%;
+  margin: 16px;
+  background-color: var(--card-background-light);
+}
+
+/* Header */
+.company-information-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+}
+
+.ticker-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+}
+
+/* Ticker Info Row */
+.company-information-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.ticker-symbol {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+}
+
+.growth-indicator {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.positive {
+  color: #2ecc71;
+}
+
+.negative {
+  color: #e74c3c;
+}
+
+.percentage {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Exchange and Currency Row */
+.company-information-row .exchange,
+.company-information-row .currency {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+}
+
+/* Company Description */
+.company-description {
+  margin-top: 24px;
+}
+
+/* Sector and Industry Badges */
+.sector-industry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sector,
+.industry {
+  background-color: var(--accent-background-light);
+  color: var(--button-text-light);
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+/* About Company and Description Text */
+.about-company {
+  font-size: 16px;
+  color: var(--company-text-color-light);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.description-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Moving Averages Section */
+.moving-averages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.moving-average {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--company-background-color-dark);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+  margin-bottom: 8px;
+}
+
+.value {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--company-text-color-light);
+}
+
+/* Hide on smaller screens */
+.hidden-lg {
+  display: none;
+}
+
+/* Apply dark theme styles when in dark mode */
+/* [data-theme="dark"] {
+  --company-text-color-light: #333;
+  --company-background-color-light: #fff;
+  --accent-background-light: #6883BC;
+  --button-background-light: #6883BC;
+  --button-text-light: #fff;
+  --card-background-light: #f3f4f6;
+  --card-box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  --company-text-color-dark: #fff;
+  --company-background-color-dark: #1d6d19;
+  --accent-background-dark: #0056b3;
+  --button-background-dark: #0056b3;
+  --button-text-dark: #fff;
+  --card-background-dark: #222;
+  --card-box-shadow-dark: 0 4px 8px rgba(255, 255, 255, 0.1);
+} */
+
+/* Apply theme-specific styles to elements when in dark mode */
+[data-theme="dark"] .company-information-content {
+  background-color: var(--card-background-dark);
+  box-shadow: var(--card-box-shadow-dark);
+  color: var(--company-text-color-dark);
+}
+
+[data-theme="dark"] .sector,
+[data-theme="dark"] .industry {
+  background-color: var(--accent-background-dark);
+  color: var(--button-text-dark);
+}
+
+[data-theme="dark"] .title,
+[data-theme="dark"] .value {
+  color: var(--company-text-color-dark);
+}

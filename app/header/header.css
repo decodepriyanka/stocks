@@ -1,0 +1,131 @@
+/* header.css */
+:root {
+  --header-background-light: #A5D7E8;
+  --header-text-light: #19376D;
+  --header-background-dark: #0B2447;
+  --header-text-dark: #A5D7E8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  align-items: center;
+  background-color: var(--header-background-light);
+  padding: 10px;
+  color: var(--header-text-light);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0px;
+}
+
+[data-theme="light"] header {
+  background-color: var(--header-background-light);
+}
+
+[data-theme="dark"] header {
+  background-color: var(--header-background-dark);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.search-bar {
+  position: relative;
+}
+
+input {
+  width: 500px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #222;
+  transition: box-shadow 0.3s;
+}
+
+input:hover, input:focus {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.has-suggestions input {
+  border-radius: 5px 5px 0 0;
+}
+
+
+:root {
+  --suggestion-background-light: #A5D7E8;
+  --suggestion-text-light: #19376D;
+  --suggestion-background-dark: #0B2447;
+  --suggestion-text-dark: #A5D7E8;
+}
+/* Suggestion Box Styles */
+.suggestions {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--suggestion-border-light);
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--suggestion-background-light);
+  color: var(--suggestion-text-light);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.suggestions li {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestions li:hover {
+  background-color: #37393d;
+  color: #fff;
+}
+
+/* Dark Theme Styles for Suggestions */
+[data-theme="dark"] .suggestions {
+  border: 1px solid var(--suggestion-border-dark);
+  background-color: var(--suggestion-background-dark);
+  color: var(--suggestion-text-dark);
+}
+
+/* Show the suggestion box when there are suggestions */
+.has-suggestions .suggestions {
+  transform: scaleY(1);
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,8 @@
+/* theme-variables.css */
+:root {
+    --text-color-light: #000;
+    --background-color-light: #fff;
+    --text-color-dark: red;
+    --background-color-dark: #512B81;
+  }
+  
